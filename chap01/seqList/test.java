@@ -11,5 +11,11 @@ public class test {
 		
 		System.out.println(seqList.get(2));
 		System.out.println(seqList.toString());
+		
+		seqList.insert(1, "ff");
+		System.out.println(seqList.toString());
+		seqList.insert(-1, "gg");
+		seqList.insert(seqList.size(), "hh");
+		System.out.println(seqList.toString());
 	}
 }

@@ -79,4 +79,33 @@ public class SeqList<T> {
 		sb.append(")");
 		return sb.toString();
 	}
+	
+	//在指定位置插入元素
+	public void insert(int index, T value){
+		//输入参数检查
+		if(value==null)
+			throw new NullPointerException("value==null");
+		else if(index<0)
+			index = 0;
+		else if(index>this.used)
+			index = this.used;
+		else
+			;
+		
+		//顺序表容量检查
+		if(this.used==this.elements.length)
+			reSize();
+		
+		//插入元素
+		for(int i=this.used; i>index; i--){
+			this.elements[i] = this.elements[i-1];
+		}
+		this.elements[index] = value;
+		this.used++;
+	}
+	
+	//在末尾插入
+	public void insert(T value){
+		insert(this.used, value);
+	}
 }
