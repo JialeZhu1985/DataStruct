@@ -17,5 +17,8 @@ public class test {
 		seqList.insert(-1, "gg");
 		seqList.insert(seqList.size(), "hh");
 		System.out.println(seqList.toString());
+		
+		System.out.println(seqList.remove(2));
+		System.out.println(seqList.toString());
 	}
 }

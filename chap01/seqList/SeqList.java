@@ -108,4 +108,21 @@ public class SeqList<T> {
 	public void insert(T value){
 		insert(this.used, value);
 	}
+	
+	//删除指定索引元素
+	public T remove(int index){
+		//索引检查
+		if(index<0 || index>=this.used)
+			throw new IndexOutOfBoundsException("索引越界");
+		else{
+			T res = (T)this.elements[index];
+			
+			for(int i=index; i<this.used; i++){
+				this.elements[i] = this.elements[i+1];
+			}
+			this.used--;
+			
+			return res;
+		}
+	}
 }
