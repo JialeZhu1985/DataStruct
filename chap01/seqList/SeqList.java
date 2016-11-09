@@ -76,7 +76,7 @@ public class SeqList<T> {
 			}
 		}
 		
-		sb.append("");
+		sb.append(")");
 		return sb.toString();
 	}
 }
