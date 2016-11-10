@@ -120,9 +120,14 @@ public class SeqList<T> {
 			for(int i=index; i<this.used; i++){
 				this.elements[i] = this.elements[i+1];
 			}
-			this.used--;
+			this.elements[this.used--] = null;		//释放元素，并改变元素数目
 			
 			return res;
 		}
+	}
+	
+	//删除所有元素
+	public void clear(){
+		this.used = 0;
 	}
 }
