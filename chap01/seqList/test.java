@@ -19,6 +19,7 @@ public class test {
 		System.out.println(seqList.toString());
 		
 		System.out.println(seqList.remove(2));
+
 		System.out.println(seqList.toString());
 	}
 }

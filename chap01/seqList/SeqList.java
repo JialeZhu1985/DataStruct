@@ -117,10 +117,11 @@ public class SeqList<T> {
 		else{
 			T res = (T)this.elements[index];
 			
-			for(int i=index; i<this.used; i++){
+			for(int i=index; i<this.used-1; i++){
 				this.elements[i] = this.elements[i+1];
 			}
-			this.elements[this.used--] = null;		//释放元素，并改变元素数目
+			this.used--;				//释放元素，并改变元素数目
+//			this.elements[this.used] = null;
 			
 			return res;
 		}
