@@ -9,7 +9,7 @@ package seqList;
 
 public class SeqList<T> {
 	private Object[] elements;			//数组，存储顺序表元素
-	private int used;							//存储的元素个数
+	protected int used;							//存储的元素个数
 
 	//构造方法
 	public SeqList(int length){
@@ -38,7 +38,7 @@ public class SeqList<T> {
 	
 	//扩展顺序表容量
 	public void reSize(){
-		Object[] temp = new Object[this.used*2];
+		Object[] temp = new Object[this.used*2+1];
 		for(int index=0; index<this.used; index++)
 			temp[index] = this.elements[index];
 		
@@ -113,7 +113,7 @@ public class SeqList<T> {
 	public T remove(int index){
 		//索引检查
 		if(index<0 || index>=this.used)
-			throw new IndexOutOfBoundsException("索引越界");
+			return null;
 		else{
 			T res = (T)this.elements[index];
 			
