@@ -5,21 +5,9 @@ public class test {
 		String[] strs = {"aa", "bb", "cc", "dd"};
 		SeqList<String> seqList = new SeqList<>(strs);
 		
-		System.out.println(seqList.toString());
+		String[] strs2 = {"aa", "bb", "cc", "dd"};
+		SeqList<String> seqList2 = new SeqList<>(strs2);
 		
-		seqList.set(2, "ee");
-		
-		System.out.println(seqList.get(2));
-		System.out.println(seqList.toString());
-		
-		seqList.insert(1, "ff");
-		System.out.println(seqList.toString());
-		seqList.insert(-1, "gg");
-		seqList.insert(seqList.size(), "hh");
-		System.out.println(seqList.toString());
-		
-		System.out.println(seqList.remove(2));
-
-		System.out.println(seqList.toString());
+		System.out.println(seqList.equals(seqList2));
 	}
 }

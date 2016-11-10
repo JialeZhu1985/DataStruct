@@ -121,7 +121,6 @@ public class SeqList<T> {
 				this.elements[i] = this.elements[i+1];
 			}
 			this.used--;				//释放元素，并改变元素数目
-//			this.elements[this.used] = null;
 			
 			return res;
 		}
@@ -130,5 +129,36 @@ public class SeqList<T> {
 	//删除所有元素
 	public void clear(){
 		this.used = 0;
+	}
+	
+	//顺序表的查找
+	public int search(T key){
+		for(int i=0; i<this.used; i++)
+			if(this.elements[i].equals(key))
+				return i;
+		return -1;
+	}
+	
+	//判断是否包含指定元素
+	public boolean contain(T key){
+		return search(key)!= -1;
+	}
+	
+	//比较两个顺序表是否相等
+	@Override
+	public boolean equals(Object obj) {
+		if(obj==this)
+			return true;
+		
+		if(obj instanceof SeqList<?>){
+			SeqList<T> list = (SeqList<T>)obj;
+			if(list.used==this.used){
+				for(int i=0; i<list.used; i++)
+					if(!this.elements[i].equals(list.elements[i]))
+						return false;
+				return true;
+			}
+		}
+		return false;
 	}
 }
