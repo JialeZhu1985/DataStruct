@@ -149,6 +149,22 @@ public class SinglyList<T> extends Object {
 		return search(key)!=null;
 	}
 	
+//	//实现链表反转
+//	public void reverse(){
+//		Node<T> pre = head.next;
+//		
+//		if(pre.next!=null){		//判断是否只有一个数据节点
+//			Node<T> curr = pre.next;
+//			while(curr!=null){
+//				Node<T> succ = curr.next;
+//				curr.next = pre;
+//				
+//			}
+//		}else{
+//			;
+//		}
+//	}
+	
 	@Override
 	public String toString() {
 		Node<T> curr = head.next;
