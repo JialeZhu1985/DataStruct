@@ -73,23 +73,82 @@ public class SinglyList<T> extends Object {
 		return counter;
 	}
 	
-//	//在指定索引处插入元素
-//	public void insert(int index, T value){
-//		Node<T> curr = head.next;
-//		int counter = 0;
-//		
-//		while(curr!=null && counter<index){
-//			curr = curr.next;
-//			counter++;
-//		}
-//		if(counter==index && curr!=null)
-//			curr = new Node<T>(value, curr.next);
-//		else if(counter==index && curr==null)
-//			curr = new Node<T>(value, null);
-//		else
-//			throw new UnsupportedOperationException("索引越界");
-//	}
-
+	//在指定索引处插入元素，索引超出长度时直接插入到最后
+	public void insert(int index, T value){
+		Node<T> curr = this.head;
+		int counter = 0;
+		
+		while(curr.next!=null && counter<index){
+			curr = curr.next;
+			counter++;
+		}
+		
+		if(curr.next!=null)
+			curr.next = new Node<T>(value, curr.next);
+		else{
+			curr.next = new Node<T>(value, curr.next);
+			rear = curr.next;
+		}
+	}
+	//末尾追加
+	public void append(T value){
+		rear.next = new Node<T>(value, null);
+		rear = rear.next;
+	}
+	
+	//删除指定索引处元素
+	public T remove(int index){
+		Node<T> curr = head;
+		int counter = 0;
+		
+		while(counter<index && curr.next!=null){
+			counter++;
+			curr = curr.next;
+		}
+		
+		T res = null;
+		if(curr.next!=null){		//如果后继节点存在，则直接删除
+			res = curr.next.value;
+			if(curr.next.next!=null)		//被删除节点不是尾节点，则rear保持不变
+				curr.next = curr.next.next;
+			else{							//被删除节点是尾节点
+				rear = curr;
+				curr.next = curr.next.next;
+			}
+		}
+		else							//如果后继节点不存在，则返回null
+			res = null;
+		
+		return res;	
+	}
+	
+	//清除单链表
+	public void clear(){
+		this.head.next = null;
+	}
+	
+	//查找链表中的指定节点
+	public Node<T> search(T key){
+		Node<T> curr = head;
+		Node<T> res = null;
+		
+		while(curr.next!=null){
+			if(curr.next.value.equals(key)){
+				res = curr.next;
+				break;
+			}else{
+				curr = curr.next;
+			}
+		}
+		
+		return res;
+	}
+	
+	//判断是否包含指定元素
+	public boolean contains(T key){
+		return search(key)!=null;
+	}
+	
 	@Override
 	public String toString() {
 		Node<T> curr = head.next;
