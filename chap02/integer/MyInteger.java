@@ -61,6 +61,25 @@ public class MyInteger implements Comparable<MyInteger>, Serializable {
 		}
 	}
 	
+	//整型解析为十六进制形式补码的字符串
+	public String toHexString(){
+		char[] buffer = new char[8];
+		int value = this.value;
+		
+		for(int i = 0; i<8; i++){
+			int tmp = value&15;
+			
+			if(tmp<10)
+				buffer[buffer.length-1-i] = (char)(tmp+'0');
+			else
+				buffer[buffer.length-1-i] = (char)(tmp-10+'A');
+			
+			value = value>>>4;
+		}
+		
+		return new String(buffer);
+	}
+	
 	@Override
 	public int compareTo(MyInteger o) {
 		return this.value - o.value;

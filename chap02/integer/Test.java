@@ -13,5 +13,6 @@ public class Test {
 		
 //		MyInteger num4 = new MyInteger("-aBFG", 16);
 //		System.out.println(num4.toString());
+		System.out.println(num3.toHexString());
 	}
 }
