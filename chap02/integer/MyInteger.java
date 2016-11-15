@@ -9,7 +9,7 @@ public class MyInteger implements Comparable<MyInteger>, Serializable {
 	private static final long serialVersionUID = 1L;
 	public static final int MIN_VALUE = 0x80000000;
 	public static final int MAX_VALUE = 0x7fffffff;
-	public final int value;
+	private final int value;
 	
 	//构造方法
 	public MyInteger(int value) {

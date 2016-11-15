@@ -85,18 +85,19 @@ public class MyString implements Serializable, Comparable<MyString> {
 	public int compareTo(MyString str) {
 		int len1 = this.length(), len2 = str.length();
 		int index = 0;
-		int res=0;
-		
-		while(index<len1 && index<len2){
-			res = this.charAt(index)-str.charAt(index);
-			if(res==0)			//字符相等时，比较后续字符
+		int res = 0;
+
+		while (index < len1 && index < len2) {
+			res = this.charAt(index) - str.charAt(index);
+			if (res == 0) // 字符相等时，比较后续字符
 				index++;
-			else					//遇到不等字符，则停止比较，直接返回
+			else
+				// 遇到不等字符，则停止比较，直接返回
 				return res;
 		}
-		
-		//其中一个字符是另一个字符子串的情况下，返回串长度差
-		return len1-len2;
+
+		// 其中一个字符是另一个字符子串的情况下，返回串长度差
+		return len1 - len2;
 
 	}
 
