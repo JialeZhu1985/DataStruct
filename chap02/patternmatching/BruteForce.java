@@ -44,4 +44,8 @@ public class BruteForce {
 		
 		return res;
 	}
+	
+	public int indexOf(String target, String pattern) {
+		return this.indexOf(target, pattern, 0);
+	}
 }
