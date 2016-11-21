@@ -95,23 +95,28 @@ public class SparseComposed {
 	 * 行单链表压缩存储稀疏矩阵
 	 * @author PanShan
 	 * @param mt:稀疏矩阵
-	 * @return Singly[] res:单链表数组
+	 * @return SinglyList[] res:单链表数组
 	 * */
-	public static SinglyList<Triple>[] rowLinkedComposed(Matrix mt){
+	public static Object[] rowLinkedComposed(Matrix mt){
 		//获取矩阵的行列数
 		int rows = mt.getRows();
 		int cols = mt.getCols();
 		
+//		SinglyList<Triple>[] res = new SinglyList<Triple>[rows];	//不能直接创建泛型数组
+		
 		Object[] res = new Object[rows];
 		
 		for(int row = 0; row < rows; row++){
-			SinglyList<Triple> sl = new SinglyList<>();
+			SinglyList<Triple> sl = new SinglyList<Triple>();
 			for(int col = 0; col < cols; col++){
-				if()
+				if(mt.get(row, col) != 0){
+					sl.append(new Triple(row, col, mt.get(row, col)));
+				}else
+					continue;
 			}
+			res[row] = sl;
 		}
-		
-		
-		return null;
+
+		return res;
 	}
 }

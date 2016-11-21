@@ -9,7 +9,7 @@ public class Test {
 		int[][] values = new int[rows][cols];
 		
 		Matrix mt = new Matrix(rows, cols, values);
-		System.out.println(mt.toString());
+//		System.out.println(mt.toString());
 		
 		//初始化稀疏矩阵
 		Random r = new Random();
@@ -30,12 +30,19 @@ public class Test {
 //		for(Triple item:res2)
 //			System.out.println(item.toString());
 //		
-		//链式压缩存储，行主序
-		SinglyList<Triple> sl = SparseComposed.linkedComposed(mt, true);
-		System.out.println(sl.toString());
+//		//链式压缩存储，行主序
+//		SinglyList<Triple> sl = SparseComposed.linkedComposed(mt, true);
+//		System.out.println(sl.toString());
+//		
+//		//链式压缩存储、列主序
+//		SinglyList<Triple> sl2 = SparseComposed.linkedComposed(mt, false);
+//		System.out.println(sl2.toString());
 		
-		//链式压缩存储、列主序
-		SinglyList<Triple> sl2 = SparseComposed.linkedComposed(mt, false);
-		System.out.println(sl2.toString());
+		//行单链表压缩存储
+		Object[] o = SparseComposed.rowLinkedComposed(mt);
+		for(Object item:o){
+			SinglyList<Triple> sl = (SinglyList<Triple>)item;
+			System.out.println(item.toString());
+		}
 	}
 }

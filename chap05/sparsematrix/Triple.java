@@ -1,5 +1,7 @@
 package sparsematrix;
 
+import java.util.Collections;
+
 /**
  * 存储矩阵元素的三元组(row, col, value)
  */
@@ -8,6 +10,7 @@ public class Triple implements Comparable<Triple> {
 
 	// 构造方法
 	public Triple(int row, int col, int value) {
+//		super();
 		if (row < 0 || col < 0)
 			throw new IllegalArgumentException("row=" + row + ",col=" + col);
 
