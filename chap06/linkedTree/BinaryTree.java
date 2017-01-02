@@ -1,5 +1,7 @@
 package linkedTree;
 
+import java.util.Stack;
+
 public class BinaryTree<T> {
 	private BinaryNode<T> root = null;
 	
@@ -144,5 +146,37 @@ public class BinaryTree<T> {
 		}
 		
 		return size;
+	}
+	
+	//非递归先跟次序遍历
+	public void preOrderTraverse() {
+		Stack<BinaryNode<T>> stack = new Stack<>();
+		BinaryNode<T> p = root;
+		
+		while (p != null || !stack.isEmpty()) {
+			if (p != null) {
+				System.out.println(p.toString());
+				stack.push(p);
+				p = p.left;
+			} else {//p==null && !stack.isEmpty()
+				p = stack.pop();
+				p = p.right;
+			}
+		}
+	}
+	public void inOrderTraverse() {
+		Stack<BinaryNode<T>> stack = new Stack<>();
+		BinaryNode<T> p = root;
+		
+		while (p != null || !stack.isEmpty()) {
+			if (p != null) {
+				stack.push(p);
+				p = p.left;
+			} else {	//p==null && !stack.isEmpty()
+				p = stack.pop();
+				System.out.println(p.toString());
+				p = p.right;
+			}
+		}
 	}
 }

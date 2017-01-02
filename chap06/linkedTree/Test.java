@@ -19,10 +19,12 @@ public class Test {
 		
 		System.out.println(tree.height());
 		System.out.println(tree.size());
+		System.out.println("-----------");
 		
-		Integer[] prelist = new Integer[]{0,1,2,3, null, 4,5,6,7, null, 8};
-//		Integer[] prelist = new Integer[]{0,1,3,7,null,null,8,null,null,4,null,null,2,5,null,null,6,null,null};
+//		Integer[] prelist = new Integer[]{0,1,2,3, null, 4,5,6,7, null, 8};
+		Integer[] prelist = new Integer[]{0,1,3,7,null,null,8,null,null,4,null,null,2,5,null,null,6,null,null};
 		BinaryTree<Integer> node2 = new BinaryTree<>(prelist);
-		node2.toString();
+		node2.preOrderTraverse();
+		node2.inOrderTraverse();
 	}
 }
