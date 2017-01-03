@@ -26,5 +26,7 @@ public class Test {
 		BinaryTree<Integer> node2 = new BinaryTree<>(prelist);
 		node2.preOrderTraverse();
 		node2.inOrderTraverse();
+		System.out.println("---------------");
+		node2.levelorder();
 	}
 }

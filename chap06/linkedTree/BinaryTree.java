@@ -1,5 +1,7 @@
 package linkedTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTree<T> {
@@ -177,6 +179,23 @@ public class BinaryTree<T> {
 				System.out.println(p.toString());
 				p = p.right;
 			}
+		}
+	}
+	
+	//层次遍历
+	public void levelorder() {
+		Queue<BinaryNode<T>> queue = new LinkedList<BinaryNode<T>>();
+		BinaryNode<T> p = root;
+		
+		while (p != null) {
+			System.out.println(p.toString());
+			
+			if (p.left != null)
+				queue.add(p.left);
+			if (p.right != null)
+				queue.add(p.right);
+			
+			p = queue.poll();//队列空时返回null
 		}
 	}
 }
