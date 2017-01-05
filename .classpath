@@ -6,10 +6,7 @@
 	<classpathentry kind="src" path="chap05"/>
 	<classpathentry kind="src" path="chap06"/>
 	<classpathentry kind="src" path="chap07"/>
-<<<<<<< HEAD
-=======
 	<classpathentry kind="src" path="chap08"/>
->>>>>>> branch 'master' of https://github.com/panshanwhut/DataStruct.git
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
