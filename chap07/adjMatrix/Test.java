@@ -22,5 +22,13 @@ public class Test {
 		//移除第三个顶点
 		mg.removeVertex(3);
 		System.out.println(mg.toString());
+		
+		//获取边的权值
+		System.out.println(mg.weight(0, 2));
+		
+		//获取vi在vj之后的邻接节点
+		System.out.println(mg.next(0, 2));
+		System.out.println(mg.next(0, 3));
+		System.out.println(mg.next(0, -1));
 	}
 }

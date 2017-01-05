@@ -83,9 +83,19 @@ public class MatrixGraph<T> {
 		return edges[i][j];
 	}
 	
-	//获得邻接顶点
+	//返回顶点vj之后属于vi的邻接顶点的顶点。
 	public int next(int i, int j) {
+		int size = vertexlist.size();
 		
+		if (0 <= i && i < size && -1 <= j && j < size - 1 && i != j) {
+			for (int k = j + 1; k < size; k++) {
+				if (0 < edges[i][k]) {	//边存在
+					return k;
+				}
+			}
+		}
+		
+		return -1;
 	}
 	
 	//输出图
