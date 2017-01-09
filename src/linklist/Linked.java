@@ -1,4 +1,4 @@
-package linkedlist;
+package linklist;
 
 /**
  * 构造链表类，带头结点*/
@@ -26,6 +26,7 @@ public class Linked {
 		
 		while (curr != null) {
 			sb.append(curr.toString()+",");
+			curr = curr.next;
 		}
 		
 		return sb.toString();

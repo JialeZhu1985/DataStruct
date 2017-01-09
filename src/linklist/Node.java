@@ -1,4 +1,4 @@
-package linkedlist;
+package linklist;
 
 /**
  * 构造链表节点类*/

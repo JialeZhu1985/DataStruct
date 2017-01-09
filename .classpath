@@ -8,6 +8,7 @@
 	<classpathentry kind="src" path="chap07"/>
 	<classpathentry kind="src" path="chap08"/>
 	<classpathentry kind="src" path="chap09"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
